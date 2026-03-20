@@ -18,94 +18,108 @@
         .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:15px;}
         .card{background:#f8f9fa;padding:20px;border-radius:6px;text-align:center;}
         .card h3{margin-bottom:10px;color:#2c3e50;}
-        .card p{margin-bottom:15px;color:#666;}
+        .card p{margin-bottom:15px;color:#666;line-height:1.6;}
         button{background:#1abc9c;color:white;border:none;padding:10px 18px;border-radius:5px;margin-top:10px;cursor:pointer;}
         button:hover{background:#159a80;}
         footer{background:#2c3e50;color:white;text-align:center;padding:20px;margin-top:30px;}
         .intro-text{line-height:1.8;color:#333;text-indent:2em;margin-bottom:10px;}
         .feature-list{margin-top:15px;line-height:1.8;color:#333;}
         .feature-list li{margin-left:20px;}
+
+        /* 咨询弹窗样式 */
+        .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;}
+        .modal-content{background:white;width:90%;max-width:500px;margin:100px auto;padding:30px;border-radius:10px;position:relative;}
+        .modal-content h3{margin-bottom:20px;color:#2c3e50;}
+        .form-item{margin-bottom:15px;}
+        .form-item label{display:block;margin-bottom:6px;font-weight:bold;}
+        .form-item input,.form-item textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:5px;}
+        .close{position:absolute;top:15px;right:20px;font-size:20px;cursor:pointer;}
+        .msg{display:none;background:#e8f5e9;color:#2e7d32;padding:12px;border-radius:5px;margin-top:15px;text-align:center;}
     </style>
 </head>
 <body>
-    <header>
-        <h1>武汉东湖学院校园法治服务平台</h1>
-        <p>大学生权益保护 | 普法教育 | 线上线下一体化服务</p>
-    </header>
 
-    <nav>
-        <a href="#home">首页</a>
-        <a href="#news">法治资讯</a>
-        <a href="#cases">案例库</a>
-        <a href="#templates">法律模板</a>
-        <a href="#consult">在线咨询</a>
-        <a href="#service">线下预约</a>
-        <a href="#about">关于我们</a>
-    </nav>
+<header>
+    <h1>武汉东湖学院校园法治服务平台</h1>
+    <p>大学生权益保护 | 普法教育 | 线上线下一体化服务</p>
+</header>
 
-    <div class="banner">
-        学法·懂法·守法·用法 守护校园每一位同学
-    </div>
+<nav>
+    <a href="#home">首页</a>
+    <a href="#news">法治资讯</a>
+    <a href="#cases">案例库</a>
+    <a href="#templates">法律模板</a>
+    <a href="#consult">在线咨询</a>
+    <a href="#service">线下预约</a>
+    <a href="#about">关于我们</a>
+</nav>
 
-    <div class="container">
-        <div class="module" id="home">
-            <h2>平台服务功能</h2>
-            <div class="grid">
-                <div class="card" id="news">
-                    <h3>📢 法治资讯</h3>
-                    <p>实时更新校园相关法律法规、政策解读与普法文章，帮助师生快速了解法律知识。</p>
-                    <button>查看资讯</button>
-                </div>
-                <div class="card" id="cases">
-                    <h3>📚 案例库</h3>
-                    <p>收录校园兼职、实习纠纷、网络消费等真实案例，提供专业分析与维权参考。</p>
-                    <button>浏览案例</button>
-                </div>
-                <div class="card" id="templates">
-                    <h3>📄 法律模板</h3>
-                    <p>提供实习协议、租房合同、消费维权函等标准化模板，免费下载直接使用。</p>
-                    <button>下载模板</button>
-                </div>
-                <div class="card" id="consult">
-                    <h3>💬 在线咨询</h3>
-                    <p>提交法律问题，由专业志愿者或老师提供线上解答与初步维权建议。</p>
-                    <button>立即咨询</button>
-                </div>
-                <div class="card" id="service">
-                    <h3>📍 线下预约</h3>
-                    <p>预约校园法治服务站一对一咨询，参与普法讲座与纠纷调解活动。</p>
-                    <button>预约服务</button>
-                </div>
-                <div class="card">
-                    <h3>⭐ 反馈评价</h3>
-                    <p>对服务体验进行评价与建议，帮助我们持续优化平台功能与服务质量。</p>
-                    <button>提交反馈</button>
-                </div>
+<div class="banner">
+    学法·懂法·守法·用法 守护校园每一位同学
+</div>
+
+<div class="container">
+    <div class="module" id="home">
+        <h2>平台服务功能</h2>
+        <div class="grid">
+            <div class="card" id="news">
+                <h3>📢 法治资讯</h3>
+                <p>实时更新法律法规、政策解读与校园普法知识，提升法律意识。</p>
+                <button>查看资讯</button>
+            </div>
+            <div class="card" id="cases">
+                <h3>📚 案例库</h3>
+                <p>收录兼职纠纷、消费维权、宿舍矛盾等真实案例，提供参考。</p>
+                <button>浏览案例</button>
+            </div>
+            <div class="card" id="templates">
+                <h3>📄 法律模板</h3>
+                <p>实习协议、租房合同、维权函等模板免费下载使用。</p>
+                <button>下载模板</button>
+            </div>
+            <div class="card" id="consult">
+                <h3>💬 在线咨询</h3>
+                <p>提交法律问题，专业人员将在1-2个工作日内为您解答。</p>
+                <button onclick="openModal()">立即咨询</button>
+            </div>
+            <div class="card" id="service">
+                <h3>📍 线下预约</h3>
+                <p>预约校园服务站一对一咨询，参与普法讲座与调解。</p>
+                <button>预约服务</button>
+            </div>
+            <div class="card">
+                <h3>⭐ 反馈评价</h3>
+                <p>对服务进行评价，帮助我们持续改进平台体验。</p>
+                <button>提交反馈</button>
             </div>
         </div>
-
-        <div class="module" id="about">
-            <h2>网站介绍</h2>
-            <p class="intro-text">
-                武汉东湖学院校园法治服务平台是面向全校师生打造的一站式线上法治服务阵地，聚焦大学生兼职、实习、宿舍纠纷、网络消费等高频权益场景，整合普法与维权服务功能，实现线上线下服务一体化。
-            </p>
-            <p class="intro-text">
-                平台开设法治资讯、校园案例库、法律模板库、在线咨询、线下预约等核心板块，为师生提供精准普法知识、实用法律文书、便捷的咨询与维权通道，同时通过反馈评价持续优化服务体验，切实守护校园师生合法权益，营造知法、守法、用法的校园法治氛围。
-            </p>
-            <ul class="feature-list">
-                <li>✅ 覆盖大学生常见法律场景</li>
-                <li>✅ 免费提供普法资源与咨询服务</li>
-                <li>✅ 线上线下联动，打造完整服务闭环</li>
-                <li>✅ 可复制、可推广的校园法治服务模式</li>
-            </ul>
-        </div>
     </div>
 
-    <footer>
-        <p>武汉东湖学院校园法治服务平台 © 2025 挑战杯项目 | 联系我们：legal@whdu.edu.cn</p>
-    </footer>
-</body>
-</html>
+    <div class="module" id="about">
+        <h2>网站介绍</h2>
+        <p class="intro-text">
+            武汉东湖学院校园法治服务平台是面向全校师生打造的一站式线上法治服务阵地，聚焦大学生兼职、实习、宿舍纠纷、网络消费等高频权益场景，整合普法与维权服务功能，实现线上线下服务一体化。
+        </p>
+        <p class="intro-text">
+            平台开设法治资讯、校园案例库、法律模板库、在线咨询、线下预约等核心板块，为师生提供精准普法知识、实用法律文书、便捷的咨询与维权通道，切实守护校园师生合法权益，营造知法、守法、用法的校园法治氛围。
+        </p>
+        <ul class="feature-list">
+            <li>覆盖大学生常见法律场景</li>
+            <li>免费提供普法资源与咨询服务</li>
+            <li>线上线下联动，服务闭环完整</li>
+            <li>可复制、可推广的校园法治服务模式</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 咨询弹窗 -->
+<div class="modal" id="consultModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>在线法律咨询</h3>
+        <div class="form-item">
+            <label>姓名</label>
+     
 
 
 
